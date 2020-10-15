@@ -11,4 +11,9 @@ Also you can get cube root. Instruction to get it:
 3. and then 3.
 4. and finaly =.
 
+Instruction for work with negative numbers:
+Chose number and then click on "±" if you want to change it on negative.
+PS: if you wish, you also can change it back in positive number the same way.
+
+
 Thanks for you cross-check!:)
