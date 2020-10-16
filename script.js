@@ -116,7 +116,7 @@ function negativeNumber(argument) {
     let localNegativeNumber = display.value;
 
     if (MemoryNewNumber) {
-        localNegativeNumber ='0.';
+        localNegativeNumber *=(-1);
         MemoryNewNumber = false;
     } else {
             localNegativeNumber *= (-1);
