@@ -59,13 +59,13 @@ function operation(op) {
     } else {
         MemoryNewNumber = true;
         if (MemoryPendingOperation === '+') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*10000+localOperationMemory*10000)/10000);
+            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000+localOperationMemory*100000000)/100000000);
         } else if (MemoryPendingOperation === '-') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*10000-localOperationMemory*10000)/10000);
+            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000-localOperationMemory*100000000)/100000000);
         } else if (MemoryPendingOperation === '*') {
-            MemoryCurrentNumber = +parseFloat(((MemoryCurrentNumber*1000)*(localOperationMemory*1000))/1000000);
+            MemoryCurrentNumber = +parseFloat(((MemoryCurrentNumber*100000000)*(localOperationMemory*100000000))/10000000000000000);
         } else if (MemoryPendingOperation === '÷') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*10000)/(localOperationMemory*10000));
+            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000)/(localOperationMemory*100000000));
         } else if (MemoryPendingOperation === '√') {
             MemoryCurrentNumber **= parseFloat(1/localOperationMemory);
             if (MemoryCurrentNumber.toString() == NaN.toString()) {
