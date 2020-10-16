@@ -112,8 +112,14 @@ function clear(id) {
 
 
 
-function negativeNumber(argument) {
-    let localNegatuveNumberMemory = display.value;
-    MemoryCurrentNumber = localNegatuveNumberMemory * (-1);
-    display.value = MemoryCurrentNumber;
+function negativeNumber(argument) { 
+    let localNegativeNumber = display.value;
+
+    if (MemoryNewNumber) {
+        localNegativeNumber ='0.';
+        MemoryNewNumber = false;
+    } else {
+            localNegativeNumber *= (-1);
+        };
+    display.value = localNegativeNumber;
 };
