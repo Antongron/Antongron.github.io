@@ -59,15 +59,15 @@ function operation(op) {
     } else {
         MemoryNewNumber = true;
         if (MemoryPendingOperation === '+') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000+localOperationMemory*100000000)/100000000);
+            MemoryCurrentNumber += +localOperationMemory;
         } else if (MemoryPendingOperation === '-') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000-localOperationMemory*100000000)/100000000);
+            MemoryCurrentNumber -= +localOperationMemory;
         } else if (MemoryPendingOperation === '*') {
-            MemoryCurrentNumber = +parseFloat(((MemoryCurrentNumber*100000000)*(localOperationMemory*100000000))/10000000000000000);
+            MemoryCurrentNumber *= +localOperationMemory;
         } else if (MemoryPendingOperation === '÷') {
-            MemoryCurrentNumber = +parseFloat((MemoryCurrentNumber*100000000)/(localOperationMemory*100000000));
+            MemoryCurrentNumber /= +localOperationMemory;
         } else if (MemoryPendingOperation === '√') {
-            MemoryCurrentNumber **= parseFloat(1/localOperationMemory);
+            MemoryCurrentNumber **= 1/+localOperationMemory;
             if (MemoryCurrentNumber.toString() == NaN.toString()) {
                 MemoryCurrentNumber = "Error";
             };
@@ -76,7 +76,7 @@ function operation(op) {
         } else {
             MemoryCurrentNumber= parseFloat(localOperationMemory);
         };
-        display.value = MemoryCurrentNumber;
+        display.value = Math.round(MemoryCurrentNumber*100000000) / 100000000;
         MemoryPendingOperation = op;
     }
 
