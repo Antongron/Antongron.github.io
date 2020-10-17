@@ -4,6 +4,7 @@ let numbers = document.querySelectorAll('[data-number]'),
     clearBtns = document.querySelectorAll('.clear_btn'),
     resultBtn = document.querySelector('[data-equals]'),
     plusMinusBtn = document.querySelector('[plus-minus]'),
+    sqrtBtn = document.querySelector('.sqrt'),
     display = document.getElementById('display'),
     MemoryCurrentNumber = 0,
     MemoryNewNumber = false,
@@ -36,6 +37,8 @@ decemalBtn.addEventListener('click', decimal);
 
 plusMinusBtn.addEventListener('click', negativeNumber);
 
+sqrtBtn.addEventListener('click', sqrtFunc);
+
 
 function NumberPress(number) {
     if (MemoryNewNumber) {
@@ -66,12 +69,7 @@ function operation(op) {
             MemoryCurrentNumber *= +localOperationMemory;
         } else if (MemoryPendingOperation === '÷') {
             MemoryCurrentNumber /= +localOperationMemory;
-        } else if (MemoryPendingOperation === '√') {
-            MemoryCurrentNumber **= 1/+localOperationMemory;
-            if (MemoryCurrentNumber.toString() == NaN.toString()) {
-                MemoryCurrentNumber = "Error";
-            };
-        } else if (MemoryPendingOperation === '^') {
+        }  else if (MemoryPendingOperation === '^') {
             MemoryCurrentNumber **= parseFloat(localOperationMemory);
         } else {
             MemoryCurrentNumber= parseFloat(localOperationMemory);
@@ -123,3 +121,24 @@ function negativeNumber(argument) {
         };
     display.value = localNegativeNumber;
 };
+
+function sqrtFunc(argument) {
+    let localSqrt = display.value;
+    localSqrt = +Math.sqrt(localSqrt);
+    if (localSqrt.toString() == NaN.toString()) {
+        localSqrt = "Error";
+    };
+    display.value = localSqrt;
+
+    
+}
+    //if (MemoryNewNumber) {
+    //   localSqrt = Math.sqrt(+MemoryCurrentNumber);
+    //    MemoryNewNumber = false;
+    //} else {
+    //     MemoryCurrentNumber = Math.sqrt(+MemoryCurrentNumber);
+    //        
+    //        };
+    //    }
+    
+
