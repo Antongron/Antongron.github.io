@@ -75,6 +75,9 @@ function operation(op) {
             MemoryCurrentNumber= parseFloat(localOperationMemory);
         };
         display.value = Math.round(MemoryCurrentNumber*100000000) / 100000000;
+        if (display.value.toString() == NaN.toString()) {
+            display.value = "Error, clear all further";
+        };
         MemoryPendingOperation = op;
     }
 
