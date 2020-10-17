@@ -134,14 +134,5 @@ function sqrtFunc(argument) {
     display.value = localSqrt;
 
     
-}
-    //if (MemoryNewNumber) {
-    //   localSqrt = Math.sqrt(+MemoryCurrentNumber);
-    //    MemoryNewNumber = false;
-    //} else {
-    //     MemoryCurrentNumber = Math.sqrt(+MemoryCurrentNumber);
-    //        
-    //        };
-    //    }
-    
+};
 
